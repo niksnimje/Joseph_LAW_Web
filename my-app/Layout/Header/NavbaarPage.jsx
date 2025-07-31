@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import Button from "@/CVA/Button"
 
 const NavbaarPage = () => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
@@ -136,7 +137,7 @@ const NavbaarPage = () => {
 
   {/* Foreground Text and Arrow */}
   <span className="relative z-10 flex items-center gap-2">
-    <motion.span className="text-sm font-medium group-hover:text-black transition-colors duration-300">
+    <motion.span className="text-sm font-medium group-hover:text-white transition-colors duration-300">
       Sign in
     </motion.span>
     <motion.span className="group-hover:rotate-90 transition-transform duration-300">

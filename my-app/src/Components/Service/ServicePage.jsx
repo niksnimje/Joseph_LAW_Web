@@ -190,23 +190,6 @@ const ServicePage = () => {
           ))}
         </motion.div>
 
-        {/* Slide Indicators */}
-        <motion.div
-          className="flex items-center justify-center space-x-2 mt-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 3 }}
-        >
-          {filteredServices.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "bg-white scale-125" : "bg-gray-600"
-              }`}
-            />
-          ))}
-        </motion.div>
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import NavbaarPage from "../../Layout/Header/NavbaarPage"
 import Sidebar from "../../Layout/Header/Sidebar"
 import Footer from "../../Layout/Footer/Index"
 import HomePage from "@/Components/Home/Homepage"
+import ShapeContainer from "@/Components/ShapeContainer"
 
 
 const LawFirmWebsite = () => {
@@ -39,13 +40,15 @@ const LawFirmWebsite = () => {
           transform: rotateY(90deg);
         }
       `}</style>
-
+      {/* <ShapeContainer> */}
       <NavbaarPage />
       <Sidebar currentSection={currentSection} onSectionChange={setCurrentSection} />
       <HomePage currentSection={currentSection} onSectionChange={setCurrentSection} />
       <Footer />
+      {/* </ShapeContainer> */}
     </div>
   )
 }
+ 
 
-export default LawFirmWebsite
+export default LawFirmWebsite 

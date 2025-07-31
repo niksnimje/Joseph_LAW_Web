@@ -5,11 +5,11 @@ import Image from "next/image"
 import { useState } from "react"
 
 export default function AboutPage() {
-  const [cubeImage, setCubeImage] = useState("/aboutcube1.jpg") // Default cube image
-  const cubeImages = ["/aboutcube1.jpg", "/aboutcube2.jpg"] // Array of cube images
+  const [cubeImage, setCubeImage] = useState("/fade111.md") // Default cube image
+  const cubeImages = ["/fade12.md", "/fade111.md"] // Array of cube images
 
   return (
-    <div className=" mt-[10%] font-serif px-4 md:px-8 lg:px-16 py-16">
+    <div className=" mt-[20%]  px-4 md:px-8 lg:px-16 py-16">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
         {/* Left Column - Cube Image */}
         <motion.div 
@@ -51,7 +51,7 @@ export default function AboutPage() {
           </div>
 
           <motion.button
-            className="mt-10 px-8 py-3 bg-[#2a2a2a] text-white rounded-full flex items-center gap-2 hover:bg-[#3a3a3a] transition-colors duration-300"
+            className="mt-10 px-8 py-3 bg-[#2a2a2a] text-white rounded-lg flex items-center gap-2 hover:bg-[#3a3a3a] transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

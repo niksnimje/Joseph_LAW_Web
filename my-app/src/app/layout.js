@@ -1,18 +1,13 @@
 import "./globals.css";
-import { Lora } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
+// import { Lora } from "next/font/google";
+
 
 // Load the Lora font (400 is default)
-const lora = Lora({
-  weight: ["400"],
-  subsets: ["latin"],
-  display: "swap",
-});
-const playfair = Playfair_Display({
-  weight: ["400"],
-  subsets: ["latin"],
-  display: "swap",
-});
+// const lora = Lora({
+//   weight: ["400"],
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -22,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={lora.className}>
+      <body >
         {children}
       </body>
     </html>

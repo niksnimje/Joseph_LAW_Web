@@ -2,35 +2,59 @@
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { gsap } from "gsap"
+import { usePathname, useRouter } from 'next/navigation';
 import AnimatedText from "@/TextEffect/AnimatedText"
-import Service from "../Service/Index"
 import PageTransition from "../Transiction/PageTransition"
-import About from "../About/Index"
 import WorkFlow from "../WorkFlow/Index"
 import Contact from "../Contact/Index"
 import Faq from "../FAQ/Index"
 import Testimonials from "../Testimonials/Index"
+import AboutPage from "../About/AboutPage";
+import ServicePage from "../Service/ServicePage";
+import ExploreButton from "@/CVA/ExploreButton";
 
 const sectionComponents = {
   home: ({ initialDelay }) => (
-    <div className="">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="mb-8 flex flex-col items-center text-left absolute left-[30%] top-[55%]"
-      >
-        <AnimatedText text="Joseph Law" className="text-left text-2xl text-gray-300 font-light mb-4" delay={initialDelay} />
-        <AnimatedText
-          text="FOR THE TIMES"
-          className="text-6xl md:text-8xl font-[400] text-white font-lara "
-          delay={initialDelay}
-        />
-      </motion.div>
+    <div className="conatiner mx-auto">
+   <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="mb-8 flex flex-col text-left 
+             fixed bottom-40 left-2/3 transform -translate-x-1/2 
+             w-[90vw] max-w-md
+             sm:absolute sm:left-[35%] sm:top-[65%] sm:translate-x-0 
+             sm:w-auto sm:max-w-none
+              md:absolute md:left-[35%] md:top-[65%] md:translate-x-0 
+             md:w-auto md:max-w-none
+             lg:absolute lg:left-[30%] lg:top-[50%] lg:translate-x-0 
+             lg:w-auto lg:max-w-none
+              xl:absolute xl:left-[35%] xl:top-[50%] xl:translate-x-0 
+             xl:w-auto xl:max-w-none
+             
+             px-4 sm:px-0 z-10"
+>
+  <AnimatedText
+    text="Joseph Law"
+    className="text-xl sm:text-2xl text-gray-300 font-light text-left"
+    delay={initialDelay}
+  />
+  <AnimatedText
+    text="FOR THE TIMES"
+    className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-[400] text-white font-lara leading-tight sm:leading-[1.1]"
+    delay={initialDelay}
+  />
+</motion.div>
+<motion.div className=" text-center sm:text-left absolute left-[57%] bottom-[20%] sm:bottom-[20%] md:bottom-[15%] lg:bottom-[25%] transform -translate-x-1/2 sm:translate-x-0 px-4 sm:px-0" delay={7}>
+
+    <ExploreButton text="explore" delay={initialDelay}/>
+
+</motion.div>
+
     </div>
   ),
-  services: Service,
-  about: About,
+  services: ServicePage,
+  about: AboutPage,
   workflow: WorkFlow,
   faq: Faq,
   testimonials: Testimonials,
@@ -62,21 +86,38 @@ const HomePage = ({ currentSection, onSectionChange }) => {
       setScrollY(newScrollY)
 
       let newSection = "home"
-      if (newScrollY < 300) {
+      // if (newScrollY < 300) {
+      //   newSection = "home"
+      // } else if (newScrollY < 600) {
+      //   newSection = "services"
+      // } else if (newScrollY < 900) {
+      //   newSection = "about"
+      // } else if (newScrollY < 1200) {
+      //   newSection = "workflow"
+      // } else if (newScrollY < 1500) {
+      //   newSection = "faq"
+      // } else if (newScrollY < 1800) {
+      //   newSection = "testimonials"
+      // } else {
+      //   newSection = "contact"
+      // }
+       if (newScrollY < 400) {
         newSection = "home"
-      } else if (newScrollY < 600) {
+      } else if (newScrollY < 800) {
         newSection = "services"
-      } else if (newScrollY < 900) {
-        newSection = "about"
       } else if (newScrollY < 1200) {
+        newSection = "about"
+      } else if (newScrollY < 1600) {
         newSection = "workflow"
-      } else if (newScrollY < 1500) {
+      } else if (newScrollY < 2000) {
         newSection = "faq"
-      } else if (newScrollY < 1800) {
+      } else if (newScrollY < 2300) {
         newSection = "testimonials"
       } else {
         newSection = "contact"
       }
+
+
 
       if (newSection !== currentSection) {
         setIsTransitioning(true)
@@ -149,7 +190,7 @@ const HomePage = ({ currentSection, onSectionChange }) => {
 
   return (
     <PageTransition isTransitioning={isTransitioning}>
-      <div ref={containerRef} className="relative min-h-screen overflow-hidden">
+      <div ref={containerRef} className="relative min-h-screen overflow-hidden ">
         <div className="absolute inset-0 z-0">
           {currentSection === "home" ? (
             <video
@@ -198,7 +239,7 @@ const HomePage = ({ currentSection, onSectionChange }) => {
 
         <div
           ref={contentRef}
-          className="relative z-10 min-h-screen flex items-center justify-center px-8"
+          className="relative z-10 min-h-screen flex items-center justify-center px-8 w-full"
           style={{ clipPath: "url(#customShape)" }}
         >
           {renderContent()}

@@ -1,17 +1,15 @@
 "use client"
-import ExploreButton from "@/CVA/ExploreButton"
 import AnimatedText from "@/TextEffect/AnimatedText"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
 
-export default function AboutPage() {
-  const [cubeImage, setCubeImage] = useState("/fade111.md") 
-  const cubeImages = ["/fade12.md", "/fade111.md"] 
-  // const [cubeImage, setCubeImage] = useState("/abcd.jpg") 
-  // const cubeImages = ["/abcd.jpg", "/abcd.jpg"] 
+export default function MainAboutPage() {
+  const [cubeImage, setCubeImage] = useState("/fade111.md") // Default cube image
+  const cubeImages = ["/fade12.md", "/fade111.md"] // Array of cube images
+
   return (
-    <div className="max-w-8xl mt-[35%] sm:mt-[25%] md:mt-[10%]  px-4 md:px-8 lg:px-16 py-16 " >
+    <div className=" mt-[0%]  px-4 md:px-8 lg:px-16 py-16 " style={{backgroundImage:"url('/about_bg.webp')"}}>
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
         {/* Left Column - Cube Image */}
         <motion.div 
@@ -52,16 +50,19 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* <motion.button
-            className="mt-10 px-3 py-3 bg-[#2a2a2a] text-white rounded-lg  items-center gap-2 hover:bg-[#3a3a3a] transition-colors duration-300 "
+          <motion.button
+            className="mt-10 px-8 py-3 bg-[#2a2a2a] text-white rounded-lg flex items-center gap-2 hover:bg-[#3a3a3a] transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-          > */}
-          <div className="mt-3">
-
-           <ExploreButton text="Read Me"  />
-          </div>
-          {/* </motion.button> */}
+          >
+            Read more
+            <motion.span 
+              animate={{ x: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+            >
+              →
+            </motion.span>
+          </motion.button>
         </motion.div>
       </div>
     </div>

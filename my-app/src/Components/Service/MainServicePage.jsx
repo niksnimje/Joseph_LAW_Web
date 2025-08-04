@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import AnimatedText from "@/TextEffect/AnimatedText"
 import services from "@/Data/services"
 
-const ServicePage = () => {
+const MainServicePage = () => {
   const [activeTab, setActiveTab] = useState("Business")
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
@@ -31,8 +31,7 @@ const ServicePage = () => {
   }
 
   return (
-    
-    <div className="relative flex items-center justify-center px-4 md:px-8 w-full min-h-screen overflow-hidden mt-[5%]">
+    <div className="relative flex items-center justify-center px-4 md:px-8 w-full min-h-screen overflow-hidden">
       {/* Background Image with proper sizing */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -150,7 +149,7 @@ const ServicePage = () => {
 
           {/* Tab Navigation */}
           <motion.div
-            className="flex items-center justify-center space-x-0 bg-gray-800/50 rounded-lg p-1 w-fit sm:w-fit mx-auto mt-6 md:mt-10"
+            className="flex items-center justify-center space-x-0 bg-gray-800/50 rounded-lg p-1 w-full sm:w-fit mx-auto mt-6 md:mt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.5 }}
@@ -176,4 +175,4 @@ const ServicePage = () => {
   )
 }
 
-export default ServicePage
+export default MainServicePage

@@ -17,7 +17,7 @@ const Sidebar = ({ currentSection, onSectionChange }) => {
       initial={{ opacity: 0, x: -100 }} 
       animate={{ opacity: 1, x: 0 }} 
       transition={{ duration: 1, delay: 7 }}  
-      className="fixed left-6 top-1/3 transform -translate-y-1/2 z-40"
+      className="fixed left-8 lg:left-12  top-1/3 transform -translate-y-1/2 z-40"
     >
       <div className="flex flex-col space-y-4">
         {sectionData.map((section) => (

@@ -40,12 +40,12 @@ const LawFirmWebsite = () => {
           transform: rotateY(90deg);
         }
       `}</style>
-      {/* <ShapeContainer> */}
+      <ShapeContainer>
       <NavbaarPage />
       <Sidebar currentSection={currentSection} onSectionChange={setCurrentSection} />
       <HomePage currentSection={currentSection} onSectionChange={setCurrentSection} />
       <Footer />
-      {/* </ShapeContainer> */}
+      </ShapeContainer>
     </div>
   )
 }

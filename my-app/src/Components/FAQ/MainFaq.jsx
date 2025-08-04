@@ -8,7 +8,7 @@ import Image from "next/image";
 import AnimatedText from "@/TextEffect/AnimatedText";
 import faqs from "@/Data/faq";
 
-const BookingFAQ = () => {
+const MainFaq = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const [currentImage, setCurrentImage] = useState("/timer.png");
   const faqImages = ["/timerr.md", "/timerr2.md"];
@@ -25,8 +25,8 @@ const BookingFAQ = () => {
   };
 
   return (
-    // <div className="max-w-6xl mx-auto  mt-[180%] sm:mt-[100%] 2xl:mt-[35%] ">
-    <div className="max-w-6xl lg:mt-[55%] xl:mt-[55%] 2xl:mt-[35%]  md:px-8 lg:px-16  px-4 py-12" >
+    <div className="relative h-screen" style={{backgroundImage:"url('/bg-faq.webp')"}}>
+    <div className="max-w-6xl mx-auto px-4 py-12 mt-[5%] " >
          {/* Overlay (for dark effect) */}
       <div className="absolute inset-0 bg-black/2 bg-opacity-10 z-10" />
 
@@ -50,7 +50,7 @@ const BookingFAQ = () => {
             src={currentImage}
             alt="FAQ Visual"
             fill
-            className="object-contain cursor-pointer w-75 mt-[12%] z-10 hidden sm:hidden md:block"
+            className="object-contain cursor-pointer w-75 mt-[12%] z-10 "
             onMouseEnter={changeImage}
           />
 
@@ -100,7 +100,8 @@ const BookingFAQ = () => {
         </motion.div>
       </div>
     </div>
+    </div>
   );
 };
 
-export default BookingFAQ;  
+export default MainFaq;  

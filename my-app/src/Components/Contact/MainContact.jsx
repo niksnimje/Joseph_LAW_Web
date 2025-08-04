@@ -5,7 +5,7 @@ import { FaFacebook, FaLinkedin, FaTiktok } from "react-icons/fa"
 import { RiInstagramFill } from "react-icons/ri"
 import { useEffect, useState } from "react"
 
-const Contact = () => {
+const MainContact = () => {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Contact = () => {
   }, [])
 
   return (
-    <div className="relative w-full min-h-screen text-white  lg:mt-[65%] xl:mt-[50%] 2xl:mt-[40%]">
+    <div className="relative w-full min-h-screen text-white mt-[5%]">
       {/* Background Video */}
       <video
         autoPlay
@@ -108,4 +108,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default MainContact

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const TestimonialPage = () => {
+const MainTestimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
@@ -54,12 +54,13 @@ const TestimonialPage = () => {
   };
 
   return (
-    <div className="relative py-20 px-4 sm:px-6 lg:px-8 text-white w-full overflow-hidden  lg:mt-[50%] xl:mt-[45%] 2xl:mt-[40%]">
-      <div className="fixed inset-0 bg-black/60 -bottom-15 -z-10"></div>
-      <div className="max-w-6xl mx-auto">
+    <div className="relative py-16 px-4 sm:px-6 lg:px-8 text-white w-full overflow-hidden mt-[5%] z-50" style={{backgroundImage:"url('/bg-testemonial.webp')"}}>
+      <div className="absolute inset-0 bg-black/60 w-full h-full -z-1"></div>
+      
+      <div className="max-w-6xl mx-auto ">
         <AnimatedText 
           text="Testimonials" 
-          className="text-center text-3xl sm:text-4xl text-gray-300 font-light mb-4" 
+          className="text-center text-3xl sm:text-4xl text-gray-300 font-light mb-4 z-50" 
           delay={1} 
         />
         
@@ -150,4 +151,4 @@ const TestimonialPage = () => {
   );
 };
 
-export default TestimonialPage;
+export default MainTestimonial;

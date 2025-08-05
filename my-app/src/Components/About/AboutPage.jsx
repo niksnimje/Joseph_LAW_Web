@@ -12,7 +12,7 @@ export default function AboutPage() {
   // const cubeImages = ["/abcd.jpg", "/abcd.jpg"] 
   return (
 
-    <div className="max-w-8xl mt-[35%] sm:mt-[25%] md:mt-[10%]  px-4 md:px-8 lg:px-16 py-16 ">
+    <div className="max-w-8xl mt-[40%] sm:mt-[25%] md:mt-[10%]  px-4 md:px-8 lg:px-16 py-16 ">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
         {/* Left Column - Cube Image */}
         <motion.div 
@@ -58,7 +58,7 @@ export default function AboutPage() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           > */}
-          <div className="mt-3">
+          <div className="mt-3  mb-[20%] sm:mb-[0%]">
 
            <ExploreButton text="Read Me"  />
           </div>

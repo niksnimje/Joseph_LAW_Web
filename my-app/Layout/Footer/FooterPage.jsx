@@ -17,7 +17,7 @@ const FooterPage = () => {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 7 }}
-      className="absolute bottom-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-sm border-t border-gray-800 font-lara overflow-hidden"
+      className="absolute bottom-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-sm border-t border-gray-800 font-lara overflow-hidden hidden md:block"
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">

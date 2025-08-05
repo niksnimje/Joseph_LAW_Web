@@ -45,7 +45,7 @@ const sectionComponents = {
           delay={initialDelay}
         />
       </motion.div>
-      <motion.div className="text-center sm:text-left absolute left-[57%] bottom-[30%] sm:bottom-[25%] md:bottom-[25%] lg:bottom-[18%] xl:bottom-[12%] 2xl:bottom-[25%]  transform -translate-x-1/2 sm:translate-x-0 px-4 sm:px-0" delay={7}>
+      <motion.div className="text-center sm:text-left absolute left-[57%] bottom-[25%] sm:bottom-[25%] md:bottom-[25%] lg:bottom-[18%] xl:bottom-[12%] 2xl:bottom-[25%]  transform -translate-x-1/2 sm:translate-x-0 px-4 sm:px-0" delay={7}>
         <ExploreButton text="explore" delay={initialDelay}/>
       </motion.div>
     </div>
@@ -135,40 +135,60 @@ const HomePage = ({ currentSection, onSectionChange }) => {
     }
 
     const handleTouchEnd = (e) => {
-      if (!isMobile) return
-      
-      const touchEnd = e.changedTouches[0].screenY
-      const now = Date.now()
-      if (now - lastScrollTime < 500) return
-      setLastScrollTime(now)
+  if (!isMobile) return;
 
-      const diff = touchStart - touchEnd
-      if (Math.abs(diff) < 50) return
+  const touchEnd = e.changedTouches[0].screenY;
+  const now = Date.now();
+  if (now - lastScrollTime < 500) return;
+  setLastScrollTime(now);
 
-      const direction = diff > 0 ? 'down' : 'up'
-      const sections = ["home", "services", "about", "workflow", "faq", "testimonials", "contact"]
-      const currentIndex = sections.indexOf(currentSection)
+  const diff = touchStart - touchEnd;
+  if (Math.abs(diff) < 50) return;
 
-      let newSection = currentSection
-      if (direction === 'down' && currentIndex < sections.length - 1) {
-        newSection = sections[currentIndex + 1]
-      } else if (direction === 'up' && currentIndex > 0) {
-        newSection = sections[currentIndex - 1]
-      }
+  const direction = diff > 0 ? 'down' : 'up';
+  const sections = ["home", "services", "about", "workflow", "faq", "testimonials", "contact"];
+  const currentIndex = sections.indexOf(currentSection);
 
-      if (newSection !== currentSection) {
-        setIsTransitioning(true)
-        setPreviousSection(currentSection)
-        
-        setTimeout(() => {
-          onSectionChange(newSection)
-          setTimeout(() => {
-            setIsTransitioning(false)
-            window.scrollTo(0, 0)
-          }, 300)
-        }, 250)
-      }
-    }
+  const scrolledElement = containerRef.current;
+
+  if (!scrolledElement) return;
+
+  // ✅ Get current scroll position and height
+  const scrollTop = scrolledElement.scrollTop;
+  const scrollHeight = scrolledElement.scrollHeight;
+  const clientHeight = scrolledElement.clientHeight;
+
+  let shouldScroll = false;
+
+  if (direction === "down" && scrollTop + clientHeight >= scrollHeight - 30) {
+    shouldScroll = true;
+  } else if (direction === "up" && scrollTop <= 30) {
+    shouldScroll = true;
+  }
+
+  if (!shouldScroll) return;
+
+  let newSection = currentSection;
+  if (direction === 'down' && currentIndex < sections.length - 1) {
+    newSection = sections[currentIndex + 1];
+  } else if (direction === 'up' && currentIndex > 0) {
+    newSection = sections[currentIndex - 1];
+  }
+
+  if (newSection !== currentSection) {
+    setIsTransitioning(true);
+    setPreviousSection(currentSection);
+
+    setTimeout(() => {
+      onSectionChange(newSection);
+      setTimeout(() => {
+        setIsTransitioning(false);
+        window.scrollTo(0, 0);
+      }, 300);
+    }, 250);
+  }
+}
+
 
     const container = containerRef.current
     if (container) {

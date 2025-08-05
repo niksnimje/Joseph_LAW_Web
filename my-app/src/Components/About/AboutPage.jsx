@@ -11,11 +11,11 @@ export default function AboutPage() {
   // const [cubeImage, setCubeImage] = useState("/abcd.jpg") 
   // const cubeImages = ["/abcd.jpg", "/abcd.jpg"] 
   return (
-    <div className="max-w-8xl mt-[35%] sm:mt-[25%] md:mt-[10%]  px-4 md:px-8 lg:px-16 py-16 bg-red-" >
+    <div className="max-w-8xl mt-[0%] sm:mt-[25%] md:mt-[10%]  px-4 md:px-8 lg:px-16 py-16 ">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
         {/* Left Column - Cube Image */}
         <motion.div 
-          className="relative w-full h-64 lg:h-[900px]"
+          className="relative w-full h-64 lg:h-[900px] hidden sm:block"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -24,7 +24,7 @@ export default function AboutPage() {
             src={cubeImage}
             alt="Joseph Law Cube"
             fill
-            className="object-contain cursor-pointer transition-all duration-300 hover:scale-105  mix-blend-multiply" 
+            className="object-contain cursor-pointer transition-all duration-300 hover:scale-105  mix-blend-multiply " 
             onMouseEnter={() => setCubeImage(cubeImages[Math.floor(Math.random() * cubeImages.length)])}
           />
         </motion.div>

@@ -41,7 +41,7 @@ const LawFirmWebsite = () => {
         }
       `}</style>
       <ShapeContainer>
-      <NavbaarPage />
+      {/* <NavbaarPage /> */}
       <Sidebar currentSection={currentSection} onSectionChange={setCurrentSection} />
       <HomePage currentSection={currentSection} onSectionChange={setCurrentSection} />
       <Footer />

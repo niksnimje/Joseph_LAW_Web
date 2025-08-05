@@ -112,7 +112,7 @@ const WorkFlowPage = () => {
   return (
     <>
       {/* <div className="max-w-8xl " > </div> */}
-    <div className="flex flex-col items-center justify-center md:py-16 md:mt-[10%] lg:mt-[25%]  px-4 md:px-8 lg:px-0 py-16 ">
+    <div className="flex flex-col items-center justify-start md:py-16 md:mt-[10%] lg:mt-[25%]  px-4 md:px-8 lg:px-0 py-16 ">
       {/* Header */}
       <div className="text-center max-w-8xl">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>

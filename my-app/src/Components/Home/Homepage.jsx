@@ -45,7 +45,7 @@ const sectionComponents = {
           delay={initialDelay}
         />
       </motion.div>
-      <motion.div className="text-center sm:text-left absolute left-[57%] bottom-[20%] sm:bottom-[25%] md:bottom-[25%] lg:bottom-[18%] xl:bottom-[12%] 2xl:bottom-[25%]  transform -translate-x-1/2 sm:translate-x-0 px-4 sm:px-0" delay={7}>
+      <motion.div className="text-center sm:text-left absolute left-[57%] bottom-40  sm:bottom-[25%] md:bottom-[25%] lg:bottom-[18%] xl:bottom-[12%] 2xl:bottom-[25%]  transform -translate-x-1/2 sm:translate-x-0 px-4 sm:px-0" delay={7}>
         <ExploreButton text="explore" delay={initialDelay}/>
       </motion.div>
     </div>

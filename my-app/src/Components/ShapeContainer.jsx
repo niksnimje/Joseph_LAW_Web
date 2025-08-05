@@ -12,8 +12,10 @@ const ShapeContainer = ({ children }) => {
     <>
       {/* For lg and above - bordered layout */}
       <motion.div
+      transition={{ duration: 2, delay: 8 }}  
         className=" relative w-full h-screen  border-t-[35px] border-x-[40px]   border-black hidden lg:flex justify-between items-start bg-black outline-1 outline-amber-400"
         style={{ boxSizing: 'border-box' }}
+         
       >
         {/* Left box - contains language button */}
         <div className="bg-black w-40 h-14 absolute z-51 rounded-br-2xl flex items-center justify-start pl-4">

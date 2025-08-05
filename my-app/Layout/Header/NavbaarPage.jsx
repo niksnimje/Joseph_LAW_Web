@@ -112,12 +112,12 @@ const NavbaarPage = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden mt-4  rounded-lg "
           >
-            <div className="px-2 pt-2 pb-4 space-y-1">
+            <div className="px-2 pt-2 pb-4 space-y-1 backdrop-blur-sm">
               {allNavItems.map((item) => (
                 <MotionLink
                   href={item.path}
                   key={item.path}
-                  className="block px-3 py-2 text-white hover:bg-gray-800 rounded-md text-base font-medium"
+                  className="block  px-3 py-2 text-white hover:bg-gray-800 rounded-md text-base font-medium"
                   whileHover={{ scale: 1.05 }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -140,7 +140,7 @@ const NavbaarPage = () => {
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  </svg> 
                 </button>
 
                 {isLanguageOpen && (
@@ -156,7 +156,7 @@ const NavbaarPage = () => {
                           setSelectedLanguage(lang);
                           setIsLanguageOpen(false);
                         }}
-                        className="block w-full text-left px-4 py-2 text-white hover:bg-gray-800 transition-colors text-sm"
+                        className="block w-full text-left px-4 py-2 text-white hover:bg-gray-800 transition-colors text-sm "
                       >
                         {lang}
                       </button>

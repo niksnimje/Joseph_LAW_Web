@@ -25,7 +25,7 @@ const Contact = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover -z-10"
       >
         <source src="/video/outro.webm" type="video/webm" />
         Your browser does not support the video tag.

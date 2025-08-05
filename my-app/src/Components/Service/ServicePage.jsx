@@ -45,7 +45,7 @@ const ServicePage = () => {
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70 z-0"></div>
+      <div className="absolute inset-0 bg-black/20 z-0"></div>
       
       {/* Main Content Container */}
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 z-10">
